@@ -1,5 +1,15 @@
 from math import sin,cos,tan,log
 
+print("""
+Operations available
+
+- Sinus
+- Cosene
+- Tangent
+- Natural logarithm
+
+""")
+
 def apply_funtion(f,n):
     function={
         'sin':sin,
@@ -17,7 +27,7 @@ def calculate():
    f=input('Submit the operation to be carried out: ')
    n=int(input('Submit a number: '))
    for i, j in apply_funtion(f,n).items():
-       print(i, j)
+       print(i, round(j,2))
 
 
 if __name__ == "__main__":
