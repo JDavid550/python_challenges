@@ -3,19 +3,19 @@ from math import sin,cos,tan,log
 print("""
 Operations available
 
-- Sinus
-- Cosene
-- Tangent
-- Natural logarithm
+[1]-sin
+[2]-cos
+[3]-tan
+[4]-ln
 
 """)
 
 def apply_funtion(f,n):
     function={
-        'sin':sin,
-        'cos':cos,
-        'tan':tan,
-        'ln':log
+        1:sin,
+        2:cos,
+        3:tan,
+        4:log
     }
     result = {}
     for i in range(1, n+1):
@@ -24,11 +24,28 @@ def apply_funtion(f,n):
 
 
 def calculate():
-   f=input('Submit the operation to be carried out: ')
-   n=int(input('Submit a number: '))
-   for i, j in apply_funtion(f,n).items():
-       print(i, round(j,2))
+    
+    while True:
+        f=input('Submit the operation to be carried out: ')
+        try:
+            f = int(f)
+            if f > 4 or f < 0:
+                print('You can only select one of the four operations above')
+            break
+        except ValueError:
+            print('Please, submit a number according to the operations above')
 
+    while True:
+        n=input('Submit a number: ')
+        try:
+            n=int(n)
+            break
+        except ValueError:
+            print('error')
 
+    for i, j in apply_funtion(f,n).items():
+        print(i, round(j,2))
+    print('These results are in radians')
+                                
 if __name__ == "__main__":
     calculate() 
