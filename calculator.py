@@ -10,6 +10,7 @@ Operations available
 
 """)
 
+epsilon=0.01
 def apply_funtion(f,n):
     function={
         1:sin,
@@ -41,7 +42,7 @@ def calculate():
             n=int(n)
             break
         except ValueError:
-            print('error')
+            print('Please, submit a number')
 
     for i, j in apply_funtion(f,n).items():
         print(i, round(j,2))
