@@ -41,7 +41,7 @@ def calculate():
             n=int(n)
             break
         except ValueError:
-            print('error')
+            print('Please, submit a number: ')
 
     for i, j in apply_funtion(f,n).items():
         print(i, round(j,2))
