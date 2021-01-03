@@ -32,21 +32,24 @@ def calculate():
             f = int(f)
             if f > 4 or f < 0:
                 print('You can only select one of the four operations above')
+                calculate()
             break
         except ValueError:
             print('Please, submit a number according to the operations above')
 
-    while True:
-        n=input('Submit a number: ')
-        try:
-            n=int(n)
-            break
-        except ValueError:
-            print('Please, submit a number')
+    if int(f)<5:
+        while True:
+            n=input('Submit a number: ')
+            try:
+                n=int(n)
+                break
+            except ValueError:
+                print('Please, submit a number')
 
-    for i, j in apply_funtion(f,n).items():
-        print(i, round(j,2))
-    print('These results are in radians')
+        for i, j in apply_funtion(f,n).items():
+            print(i, round(j,2))
+        print('These results are in radians')
+
                                 
 if __name__ == "__main__":
     calculate() 
